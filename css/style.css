@@ -1,0 +1,56 @@
+/* RESET */
+
+body, h1, h2, h3, p, ul{
+  padding: 0px;
+  margin: 0px !important;
+}
+
+*{
+  box-sizing: border-box !important;
+}
+
+body{
+  font-family: Georgia, serif !important;
+  color: #252525 !important;
+}
+
+
+/* MENU */
+
+.menu{
+  background-color: #252525;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* MAIN */
+
+.intro{
+  background: url("../img/carroBg.png") no-repeat center center;
+  background-size: cover;
+  color: #f4f3ef;
+  padding: 150px 0;
+  text-align: center;
+  height: calc(100vh - 61px);
+}
+
+
+.intro p{
+  font-style: italic;
+  font-size: 1.125em;
+}
+
+.intro h1{
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+.intro h1::after{
+  content: "";
+  display: block;
+  width: 20px;
+  height: 4px;
+  background: #fff;
+  margin: 10px auto;
+}
