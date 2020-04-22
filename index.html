@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <!-- Required meta tags -->
@@ -14,10 +14,11 @@
   </head>
   <body>
     <div id="app">
+      
       <div style="text-align: center;" class="menu">
         <div class="container">
-          <div class="grid-6">
-            <h3>SOPS</h3>
+          <div id="logo" class="grid-6">
+            <img src="img/sops.png" alt="SOPS">
           </div>
           <div class="dropdown grid-6">
             <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -33,10 +34,48 @@
           </div>
         </div>
       </div>
+      <div v-if="page === 0">
         <main class="intro">
           <h1>Venha para a melhor <br> oficina do DF</h1>
           <p>Oficina referência em conserto gerais em carros de luxo em Brasília</p>
+          <div class="container pages">
+            <div class="grid-4">
+              <button v-on:click="page = 1" class="btn btn-outline-primary btn-lg ebtn">Sobre Nós</button>
+            </div>
+            <div class="grid-4">
+              <button v-on:click="page = 2" class="btn btn-outline-primary btn-lg ebtn">Serviços</button>
+            </div>
+            <div class="grid-4">
+              <button v-on:click="page = 3" class="btn btn-outline-primary btn-lg ebtn">Modelos</button>
+            </div>
+          </div>
         </main>
+      </div>
+      <div v-if="page === 1">
+        <main class="intro">
+          <h1>Nosso objetivo</h1>
+          <div class="container">
+            <div class="grid-12">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <button style="margin-top: 85px" class="btn btn-light" v-on:click="page = 0">Voltar</button>
+          </div>
+        </main>
+      </div>
+      <div v-if="page === 2">
+        <main class="intro">
+          <div class="container">
+            <div class="grid-6">
+              <img src="img/oleo.jpg" alt="">
+            </div>
+            <div class="grid-6 flex">
+              <h3>Troca de óleo</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <button style="margin-top: 85px" class="btn btn-light" v-on:click="page = 0">Voltar</button>
+          </div>
+        </main>
+      </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -47,8 +86,9 @@
       new Vue({
         el: "#app",
         data:{
-          title: "SOPS"
-        }
+          title: "SOPS",
+          page: 0
+        },
       })
     </script>
   </body>

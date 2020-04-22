@@ -1,5 +1,7 @@
 /* RESET */
 
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
 body, h1, h2, h3, p, ul{
   padding: 0px;
   margin: 0px !important;
@@ -10,7 +12,7 @@ body, h1, h2, h3, p, ul{
 }
 
 body{
-  font-family: Georgia, serif !important;
+  font-family: 'Russo One', sans-serif !important;
   color: #252525 !important;
 }
 
@@ -24,6 +26,29 @@ body{
   padding-bottom: 10px;
 }
 
+.menu img{
+  max-width: 40%;
+  height: 38px;
+}
+
+@media (max-width: 739px){
+  #logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    margin-bottom: 20px;
+  }
+  .intro{
+    height: calc(100vh - 116px) !important;
+  }
+  .pages{
+    margin-top: 30px !important;
+  }
+  .ebtn{
+    padding-bottom: 10px !important;
+  }
+}
+
 /* MAIN */
 
 .intro{
@@ -32,8 +57,9 @@ body{
   color: #f4f3ef;
   padding: 150px 0;
   text-align: center;
-  height: calc(100vh - 61px);
+  height: calc(100vh - 58px);
 }
+
 
 
 .intro p{
@@ -53,4 +79,37 @@ body{
   height: 4px;
   background: #fff;
   margin: 10px auto;
+}
+
+/* BOTOES */
+
+.pages{
+  margin-top: 95px;
+}
+
+.ebtn{
+  border-width: 2px !important;
+  border-color: #f4f3ef !important;
+  color: #f4f3ef !important;
+}
+
+.ebtn:hover{
+  background: #252525 !important;
+}
+
+
+/*FLEXBOX*/
+
+.flex{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+}
+
+@media (max-width: 739px){
+  .flex{
+    text-align: center;
+  }
 }
