@@ -14,7 +14,10 @@ body, h1, h2, h3, p, ul{
 body{
   font-family: 'Russo One', sans-serif !important;
   color: #252525 !important;
-  background: #000 !important;
+  background: url("../img/carroBg.png") no-repeat center center;
+  background-size: cover;
+  height: calc(100vh - 58px);
+  background-attachment: fixed;
 }
 
 
@@ -52,9 +55,8 @@ body{
 
 /* MAIN */
 
+
 .intro{
-  background: url("../img/carroBg.png") no-repeat center center;
-  background-size: cover;
   color: #f4f3ef;
   padding: 150px 0;
   text-align: center;
@@ -120,5 +122,16 @@ body{
   margin-top: 85px;
 }
 
-/* SOBRE */
+/* MODELOS */
 
+.model-item img{
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px auto 35px;
+}
+
+#model{
+  margin-top: -100px;
+}

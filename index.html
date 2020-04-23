@@ -14,7 +14,6 @@
   </head>
   <body>
     <div id="app">
-      <div class="bg-config"></div>
       <div style="text-align: center;" class="menu">
         <div class="container">
           <div id="logo" class="grid-6">
@@ -35,9 +34,9 @@
           </div>
         </div>
       </div>
+      <main class="intro">
       <!-- PÁGINA PRINCIPAL -->
       <div v-if="page === 0">
-        <main class="intro">
           <h1>Venha para a melhor <br> oficina do DF</h1>
           <p>Oficina referência em conserto gerais em carros de luxo em Brasília</p>
           <div class="container pages">
@@ -51,11 +50,9 @@
               <button v-on:click="page = 3" class="btn btn-outline-primary btn-lg ebtn">Modelos</button>
             </div>
           </div>
-        </main>
       </div>
       <!-- PÁGINA DE OBJETIVOS -->
       <div v-if="page === 1">
-        <main class="intro">
           <h1>Nosso objetivo</h1>
           <div class="container">
             <div class="grid-12">
@@ -67,14 +64,12 @@
             </div>
             <button style="margin-top: 85px" class="btn btn-light" v-on:click="page = 0">Voltar</button>
           </div>
-        </main>
       </div>
       <!-- PÁGINA DE SERVIÇOS -->
       <div v-if="page === 2">
-        <main class="intro">
-          <div class="container">
+          <div class="container ">
             <div class="grid-6">
-              <img src="img/oleo.jpg" alt="">
+              <img src="img/oleo.webp" alt="">
             </div>
             <div class="grid-6 flex">
               <h3>Troca de óleo</h3>
@@ -83,16 +78,42 @@
           </div>
           <div class="container servicos-item">
             <div class="grid-6">
-              <img src="img/oleo.jpg" alt="">
+              <img src="img/lanternagem.jpg" alt="">
             </div>
             <div class="grid-6 flex">
-              <h3>Troca de óleo</h3>
+              <h3>Lanternagem</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+          <div class="container servicos-item">
+            <div class="grid-6 ">
+              <img src="img/balanc.jpg" alt="">
+            </div>
+            <div class="grid-6 flex">
+              <h3>Alinhamento e balanceamento</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
           </div>
           <button style="margin-top: 45px; margin-bottom: 45px;" class="btn btn-light" v-on:click="page = 0">Voltar</button>
-        </main>
       </div>
+      <!-- PÁGINA DE MODELOS -->
+      <div id="model" v-if="page === 3">
+        <h1>Modelos aceitos</h1>
+        <div class="model-item">
+          <h3>Audi RS6 Avant</h3>
+          <img src="img/rs6.jpg" alt="">
+        </div>
+        <div class="model-item">
+          <h3>Porsche GT3 RS</h3>
+            <img src="img/gt3rs.jpg" alt="">
+        </div>
+        <div class="model-item">
+          <h3>Tesla X</h3>
+            <img src="img/teslaX.jpg" alt="">
+        </div>
+        <button style="margin-bottom: 45px;" class="btn btn-light" v-on:click="page = 0">Voltar</button>
+      </div>
+    </main>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
