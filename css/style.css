@@ -14,6 +14,7 @@ body, h1, h2, h3, p, ul{
 body{
   font-family: 'Russo One', sans-serif !important;
   color: #252525 !important;
+  background: #000 !important;
 }
 
 
@@ -59,7 +60,6 @@ body{
   text-align: center;
   height: calc(100vh - 58px);
 }
-
 
 
 .intro p{
@@ -113,3 +113,12 @@ body{
     text-align: center;
   }
 }
+
+/*SERVIÇOS*/
+
+.servicos-item{
+  margin-top: 85px;
+}
+
+/* SOBRE */
+
