@@ -16,7 +16,7 @@ body{
   color: #252525 !important;
   background: url("../img/carroBg.png") no-repeat center center;
   background-size: cover;
-  height: calc(100vh - 58px);
+  height: calc(100vh - 64px);
   background-attachment: fixed;
 }
 
@@ -24,6 +24,8 @@ body{
 /* MENU */
 
 .menu{
+  border-top: 3px solid rgba(0, 0, 0, .4);
+  border-bottom: 3px solid rgba(0, 0, 0, .4);
   background-color: #252525;
   color: #fff;
   padding-top: 10px;
@@ -36,6 +38,9 @@ body{
 }
 
 @media (max-width: 739px){
+  .intro h1{
+    font-size: 2.5em !important;
+  }
   #logo{
     display: flex;
     align-items: center;
@@ -43,13 +48,29 @@ body{
     margin-bottom: 20px;
   }
   .intro{
-    height: calc(100vh - 116px) !important;
+    height: calc(100vh - 127px) !important;
+    padding-top: 30px !important;
   }
   .pages{
     margin-top: 30px !important;
   }
   .ebtn{
     padding-bottom: 10px !important;
+  }
+  .model-item img{
+    max-width: 80% !important;
+  }
+  .grid-4{
+    margin-bottom: 10px !important;
+  }
+  #model{
+    padding-top: 100px !important;
+  }
+  .servicos{
+    padding-top: 75px !important;
+  }
+  .obj{
+    padding-top: 35px;
   }
 }
 
@@ -60,7 +81,7 @@ body{
   color: #f4f3ef;
   padding: 150px 0;
   text-align: center;
-  height: calc(100vh - 58px);
+  height: calc(100vh - 64px);
 }
 
 
@@ -118,6 +139,10 @@ body{
 
 /*SERVIÇOS*/
 
+.servicos{
+  margin-top: -75px ;
+}
+
 .servicos-item{
   margin-top: 85px;
 }
@@ -138,4 +163,26 @@ body{
 
 #logo{
   cursor: pointer;
+}
+
+/* FOOTER */
+
+.footer{
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(37,37,37,1) 60%);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-top: 60px; 
+}
+
+@media (max-width: 739px){
+  .footer{
+    padding-bottom: 50px;
+  }
+}
+
+/*OBJETIVO*/
+
+.obj{
+  margin-top: -30px;
 }

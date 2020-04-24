@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
     <title>SOPS</title>
   </head>
   <body>
@@ -52,7 +51,7 @@
           </div>
       </div>
       <!-- PÁGINA DE OBJETIVOS -->
-      <div v-if="page === 1">
+      <div class="obj" v-if="page === 1">
           <h1>Nosso objetivo</h1>
           <div class="container">
             <div class="grid-12">
@@ -62,12 +61,23 @@
                 </div>
               </div>
             </div>
-            <button style="margin-top: 85px" class="btn btn-light" v-on:click="page = 0">Voltar</button>
+            <button style="margin-top: 85px; margin-bottom: 45px;" class="btn btn-light" v-on:click="page = 0">Voltar</button>
+          </div>
+          <div class="footer">
+            <div class="container">
+              <div class="grid-6">
+                <p>Este é um projeto realizado pelos alunos do 3° semestre do curso de análise e desenvolvimento de sistemas. <br>Design por Gustavo Freitas <a href="github.com/roceroo/SOPS">github.com/roceroo/SOPS</a> </p>
+              </div>
+              <div style="max-width: 20%; float: right !important;" class="grid-6">
+                <img src="img/sops.png" alt="SOPS">
+              </div>
+            </div>
           </div>
       </div>
       <!-- PÁGINA DE SERVIÇOS -->
-      <div v-if="page === 2">
+      <div class="servicos" v-if="page === 2">
           <div class="container ">
+            <h1>Serviços</h1>
             <div class="grid-6">
               <img src="img/oleo.webp" alt="">
             </div>
@@ -95,6 +105,16 @@
             </div>
           </div>
           <button style="margin-top: 45px; margin-bottom: 45px;" class="btn btn-light" v-on:click="page = 0">Voltar</button>
+          <div class="footer">
+            <div class="container">
+              <div class="grid-6">
+                <p>Este é um projeto realizado pelos alunos do 3° semestre do curso de análise e desenvolvimento de sistemas. <br>Design por Gustavo Freitas <a href="github.com/roceroo/SOPS">github.com/roceroo/SOPS</a> </p>
+              </div>
+              <div style="max-width: 30%; float: right !important;" class="grid-6">
+                <img src="img/sops.png" alt="SOPS">
+              </div>
+            </div>
+          </div>
       </div>
       <!-- PÁGINA DE MODELOS -->
       <div id="model" v-if="page === 3">
@@ -112,8 +132,19 @@
             <img src="img/teslaX.jpg" alt="">
         </div>
         <button style="margin-bottom: 45px;" class="btn btn-light" v-on:click="page = 0">Voltar</button>
+        <div class="footer">
+          <div class="container">
+            <div class="grid-6">
+              <p>Este é um projeto realizado pelos alunos do 3° semestre do curso de análise e desenvolvimento de sistemas. <br>Design por Gustavo Freitas <a href="github.com/roceroo/SOPS">github.com/roceroo/SOPS</a> </p>
+            </div>
+            <div style="max-width: 30%; float: right !important;" class="grid-6">
+              <img src="img/sops.png" alt="SOPS">
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
+    </div>
+  </main>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
