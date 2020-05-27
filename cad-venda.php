@@ -31,35 +31,28 @@
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a v-on:click="page = 0" class="dropdown-item" href="cad-funcionario.php">Cadastro de funcionário</a>
               <a class="dropdown-item" href="cad-compra.php">Cadastro de compra</a>
-              <a class="dropdown-item" href="#">Cadastro de venda</a>
-              <a class="dropdown-item" href="?page=cad-cliente">Cadastro de usuário</a>
+              <a class="dropdown-item" href="cad-venda.php">Cadastro de venda</a>
+              <a class="dropdown-item" href="cad-cliente.php">Cadastro de Cliente</a>
               <a href="#" class="dropdown-item">Cadastro de veículo</a>
               <a v-on:click="page = 0" class="dropdown-item"  href="index2.html">Voltar para a página inicial</a> 
             </div>
           </div>
         </div>
     </div>
-	<h1>Cadastrar Cliente</h1>
-	<form action="?page=salvar-cliente" method="POST">
-		<input type="hidden" name="acao" value="cadastrar">
-		<div class="form-group">
-			<label>Nome do Cliente</label>
-			<input type="text" name="nome" class="form-control">
-		</div>
-		<div class="form-group">
-			<label>Email do Cliente</label>
-			<input type="text" name="email" class="form-control">
-		</div>
-		<div class="form-group">
-			<label>CPF do Cliente</label>
-			<input type="number" name="cpf" class="form-control">
-		</div>
-		<div class="form-group">
-			<label>Data de Nascimento do Cliente</label>
-			<input type="date" name="data_nasc" class="form-control">
-		</div>
-		<div class="form-group">
-			<button type="submit" class="btn btn-success">Cadastrar</button>
+    <h1>Cadastrar Venda</h1>
+    
+	<form action="?page=salvar-compra" method="POST">
+	<input type="hidden" name="acao" value="cadastrar">
+	<div class="form-group">
+		<label>Nome do Serviço </label>
+		<input type="text" name="nome_servico" class="form-control">
+    </div>
+    <div class="form-group">
+		<label>Valor do Servico</label>
+		<input type="number" name="valor_servico" class="form-control">
+    </div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-success">Cadastrar</button>
 		</div>
 	</form>
 

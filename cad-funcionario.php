@@ -30,8 +30,8 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a v-on:click="page = 0" class="dropdown-item" href="cad-funcionario.php">Cadastro de funcionário</a>
-              <a class="dropdown-item" href="#">Cadastro de compra</a>
-              <a class="dropdown-item" href="#">Cadastro de venda</a>
+              <a class="dropdown-item" href="cad-compra.php">Cadastro de compra</a>
+              <a class="dropdown-item" href="cad-venda.php">Cadastro de venda</a>
               <a class="dropdown-item" href="?page=cad-cliente">Cadastro de usuário</a>
               <a href="#" class="dropdown-item">Cadastro de veículo</a>
               <a v-on:click="page = 0" class="dropdown-item"  href="index2.html">Voltar para a página inicial</a> 

@@ -1,7 +1,7 @@
 <?php
 	switch($_REQUEST["acao"]){
 		case "cadastrar":
-			$sql = "INSERT INTO cliente (nome,email,cpf,data_nasc) VALUES ('".$_REQUEST["nome"]."','".$_REQUEST["email"]."', '".$_REQUEST["cpf"]."','".$_REQUEST["data_nasc"]."')";
+			$sql = "INSERT INTO venda (nome_servico,valor_servico) VALUES ('".$_REQUEST["nome_servico"]."','".$_REQUEST["valor_servico"]."')";
 			//die($sql);
 			$res = $conn->query($sql);	
 	
@@ -12,12 +12,10 @@
 			}
 		break;
 		case "editar":
-			$sql = "UPDATE cliente SET 
-						nome='".$_REQUEST["nome"]."',
-						email='".$_REQUEST["email"]"',
-						cpf='".$_REQUEST["cpf"]."',
-						data_nasc='".$_REQUEST["data_nasc"]."',
-					WHERE id_cliente='".$_REQUEST["id_cliente"]"';
+			$sql = "UPDATE venda SET 
+						nome_servico='".$_REQUEST["nome_servico"]."',
+						valor_servico='".$_REQUEST["valor_servico"]"',
+					WHERE id_venda='".$_REQUEST["id_venda"]"';
 			
 			$res = $conn->query($sql);
 			
@@ -28,7 +26,7 @@
 			}
 		break;
 		case "excluir":
-			$sql = "DELETE FROM cliente WHERE id_cliente=".$_REQUEST["id_cliente"];
+			$sql = "DELETE FROM venda WHERE id_venda=".$_REQUEST["id_venda"];
 			
 			$res = $conn->query($sql);
 			

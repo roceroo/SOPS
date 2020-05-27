@@ -15,9 +15,9 @@
 </head>
 
 <body>
-	<h1>Listar Funcionário</h1>
+	<h1>Listar Venda</h1>
 	<?php
-		$sql = "SELECT * FROM funcionario";
+		$sql = "SELECT * FROM venda";
 		
 		$res = $conn->query($sql) or die($conn->error);
 		
@@ -28,25 +28,18 @@
 		if($qtd > 0){
 			print "<table class='table table-striped table-hover'>";
 			print "<tr>";
-			print "<th>Nome do Funcionário</th>";
-			print "<th>Email</th>";
-			print "<th>Endereço do Funcionário</th>";
-			print "<th>CPF do Funcionário</th>";
-			print "<th>Data de Nascimento do Funcionário</th>";
+			print "<th>Nome do Servico</th>";
+			print "<th>Valor do Servico</th>";
 			print "<th>Ações</th>";
 			print "</tr>";
 			while($row = $res->fetch_object()){
 				print "<tr>";
-				print "<td>".$row->nome."</td>";
-				print "<td>".$row->email."</td>";
-				print "<td>".$row->endereco."</td>";
-				print "<td>".$row->cpf."</td>";
-				print "<td>".$row->data_nasc."</td>";
-				print "<td>".$row->salario."</td>";
+				print "<td>".$row->nome_servico."</td>";
+				print "<td>".$row->valor_servico."</td>";
 				print "<td>
-						<button class='btn btn-success' onclick=\"location.href='?page=editar-funcionario&id_funcionario=".$row->id_funcionario."';\">Editar</button>
+						<button class='btn btn-success' onclick=\"location.href='?page=editar-venda&id_venda=".$row->id_venda."';\">Editar</button>
 						
-						<button class='btn btn-danger' onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar-funcionario&acao=excluir&id_funcionario=".$row->id_funcionario."';}else{false;}\">Excluir</button>
+						<button class='btn btn-danger' onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar-venda&acao=excluir&id_venda=".$row->id_venda."';}else{false;}\">Excluir</button>
 					</td>";
 				print "</tr>";
 			}

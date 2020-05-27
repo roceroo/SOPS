@@ -25,11 +25,11 @@
               O que deseja fazer?
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a v-on:click="page = 0" class="dropdown-item" href="cad-funcionario.php">Cadastro de funcionário</a>
-              <a class="dropdown-item" href="#">Cadastro de compra</a>
-              <a class="dropdown-item" href="#">Cadastro de venda</a>
-              <a class="dropdown-item" href="?page=cad-cliente">Cadastro de usuário</a>
-              <a href="#" class="dropdown-item">Cadastro de veículo</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="cad-funcionario.php">Cadastro de Funcionário</a>
+              <a class="dropdown-item" href="cad-compra.php">Cadastro de Compra</a>
+              <a class="dropdown-item" href="cad-venda.php">Cadastro de Venda</a>
+              <a class="dropdown-item" href="cad-cliente.php">Cadastro de Cliete</a>
+              <a class="dropdown-item" href="cad-veiculo">Cadastro de Veículo</a>
               <a v-on:click="page = 0" class="dropdown-item" href="index2.php">Voltar para a página inicial</a> 
             </div>
           </div>

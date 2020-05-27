@@ -28,6 +28,10 @@
 		<input type="text" name="nome" class="form-control">
 	</div>
 	<div class="form-group">
+		<label>Email do Cliente</label>
+		<input type="text" name="email" class="form-control">
+	</div>
+	<div class="form-group">
 		<label>CPF do Cliente</label>
 		<input type="number" name="cpf" class="form-control">
 	</div>

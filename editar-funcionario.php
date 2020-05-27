@@ -45,6 +45,9 @@
 		<label>Salário</label>
 		<input type="number" name="salario" class="form-control">
 	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-success">Salvar</button>
+	</div>
 </form>
 
 
