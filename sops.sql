@@ -15,12 +15,12 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- Schema sops
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `sops` DEFAULT CHARACTER SET utf8 ;
-USE `sops` ;
+USE 'sops' ;
 
 -- -----------------------------------------------------
 -- Table `sops`.`funcionario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sops`.`funcionario` (
+CREATE TABLE sops.funcionario (
   `id_funcionario` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,

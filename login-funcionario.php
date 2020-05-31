@@ -32,20 +32,20 @@
           </div>
         </div>
       </div>
-		<form method="POST" action="config.php">
-			<div class="form-group">
-			  <label >Email </label>
-			  <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Digite seu Email">
-			  <small id="emailHelp" class="form-text text-muted">Seu Email não será compartilhado com ninguem.</small>
-			</div>
-			<div class="form-group">
-			  <label >Senha</label>
-			  <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha">
-			</div>
-      <button type="submit" class="btn btn-primary" name="entrar" id="entrar" href="index2.php">Entrar</button>
-    </form>
-    
-
+      <div class="holder" style='display: flex; margin: 30vh auto; padding-left: 40vw; color: #e6e6e6; background: #1a1a1a; padding-bottom: 16px; padding-top: 16px'>
+        <form method="POST" action="config.php">
+            <div class="form-group">
+              <label >Email </label>
+              <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Digite seu Email">
+              <small id="emailHelp" class="form-text text-muted">Seu Email não será compartilhado com ninguem.</small>
+            </div>
+            <div class="form-group">
+              <label >Senha</label>
+              <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha">
+            </div>
+            <button type="submit" class="btn btn-primary" name="entrar" id="entrar" href="index2.php">Entrar</button>
+          </form>
+      </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
