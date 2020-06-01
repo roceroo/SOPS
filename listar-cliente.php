@@ -1,4 +1,16 @@
 <!doctype html>
+<?php
+
+	switch(@$_REQUEST['page']){
+		case 'editar-cliente':
+			include('editar-cliente.php');
+		break;
+		case 'salvar-cliente':	
+			include('salvar-cliente.php');
+		break;
+	}
+
+?>
 <head>
     <meta charset="UTF-8">
     
@@ -50,8 +62,6 @@
 		//AS u
 		//INNER JOIN veiculo AS b
 		//ON u.id_cliente = b.id_veiculo
-
-		$conn = mysqli_connect('localhost','root', 'root', 'sops') or die("Erro de conexão");
 
 		$res = $conn->query($sql) or die($conn->error);
 		

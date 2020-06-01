@@ -52,7 +52,7 @@
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a v-on:click="page = 0" class="dropdown-item" href="cad-funcionario.php">Cadastro de Funcionário</a>
               <a v-on:click="page = 0" class="dropdown-item" href="listar-funcionario.php">Listar Funcionário</a>
-              <a class="dropdown-item" href="cad-compra.php">Cadastro de Compra</a>
+              <a class="dropdown-ite m" href="cad-compra.php">Cadastro de Compra</a>
               <a v-on:click="page = 0" class="dropdown-item" href="listar-compra.php">Listar Compra</a>
               <a class="dropdown-item" href="cad-venda.php">Cadastro de Venda</a>
               <a v-on:click="page = 0" class="dropdown-item" href="listar-venda.php">Listar Venda</a>

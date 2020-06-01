@@ -1,4 +1,16 @@
 <!doctype html>
+<?php
+
+	switch(@$_REQUEST['page']){
+		case 'editar-veiculo':
+			include('editar-veiculo.php');
+		break;
+		case 'salvar-veiculo':	
+			include('salvar-veiculo.php');
+		break;
+	}
+
+?>
 <head>
     <meta charset="UTF-8">
     <style>

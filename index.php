@@ -1,5 +1,16 @@
 
 <html lang="pt-br">
+
+<?php
+
+session_start();
+
+
+if(!isset($_SESSION['user'])){
+  header('location: login-funcionario.php');
+}
+
+?>
   <head>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <!-- Required meta tags -->

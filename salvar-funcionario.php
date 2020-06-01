@@ -8,6 +8,7 @@ include('config.php');
 	
 			if($res==true){
 				print "<br><div class='alert alert-success'>Foi cadastrado com sucesso!</div>";
+				print "<a href='listar-funcionario.php'>Ir para listagem de Funcionários</a>";
 			}else{
 				print "<div class='alert alert-danger'>Não foi possível cadastrar.</div>";
 			}

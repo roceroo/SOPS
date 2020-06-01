@@ -1,5 +1,14 @@
 <!doctype html>
 <head>
+    <?php
+
+    switch(@$_REQUEST['page']){
+      case 'salvar-cliente':
+        include('salvar-cliente.php');
+      break;
+    }
+
+    ?>
     <style>
       #app{
         color: #e6e6e6;

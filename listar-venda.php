@@ -1,18 +1,18 @@
 <!doctype html>
-<head>
-
 <?php
 
-  switch(@$_REQUEST['page']){
-    case 'editar-venda':
-      include('editar-venda.php');
-    break;
-    case 'salvar-venda':
-      include('salvar-venda.php');
-    break;
-  }
+	switch(@$_REQUEST['page']){
+		case 'editar-venda':
+			include('editar-venda.php');
+		break;
+		case 'salvar-venda':	
+			include('salvar-venda.php');
+		break;
+	}
 
 ?>
+<head>
+
     <meta charset="UTF-8">
     <style>
       *{

@@ -1,4 +1,16 @@
 <!doctype html>
+<?php
+
+	switch(@$_REQUEST['page']){
+		case 'editar-compra':
+			include('editar-compra.php');
+		break;
+		case 'salvar-compra':	
+			include('salvar-compra.php');
+		break;
+	}
+
+?>
 <head>
     <meta charset="UTF-8">
     
@@ -15,8 +27,36 @@
 </head>
 
 <body>
+	<div id="app">
+      <div class="bg-config"></div>
+      <div style="text-align: center;" class="menu">
+        <div class="container">
+          <div id="logo" class="grid-6">
+            <img src="img/sops.png" alt="SOPS">
+          </div>
+          <div class="dropdown grid-6">
+            <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              O que deseja fazer?
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a v-on:click="page = 0" class="dropdown-item" href="cad-funcionario.php">Cadastro de Funcionário</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="listar-funcionario.php">Listar Funcionário</a>
+              <a class="dropdown-item" href="cad-compra.php">Cadastro de Compra</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="listar-compra.php">Listar Compra</a>
+              <a class="dropdown-item" href="cad-venda.php">Cadastro de Venda</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="listar-venda.php">Listar Venda</a>
+              <a class="dropdown-item" href="cad-cliente.php">Cadastro de Cliente</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="listar-cliente.php">Listar Cliente</a>
+              <a class="dropdown-item" href="cad-veiculo.php">Cadastro de Veículo</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="listar-veiculo.php">Listar Veículo</a>
+              <a v-on:click="page = 0" class="dropdown-item"  href="index2.html">Voltar para a página inicial</a> 
+            </div>
+          </div>
+        </div>
+    </div>
 	<h1>Listar Compra</h1>
 	<?php
+		include('config.php');
 		$sql = "SELECT * FROM compra";
 		
 		$res = $conn->query($sql) or die($conn->error);

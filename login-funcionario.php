@@ -1,7 +1,36 @@
 <!doctype html>
 <head>
+
+<?php
+  include('config.php');
+  if(isset($_REQUEST['attempt'])){
+    $conn;
+
+    $query = mysqli_query($conn, "SELECT email FROM funcionario WHERE email = $email AND senha = $senha");
+
+    $email =  $_POST['email'];
+    $senha = $_POST['senha'];
+
+    $arrDados = mysqli_fetch_assoc($query);
+    $nlinhas = count($arrDados);
+
+    if($nlinhas == 1){
+      print "<script>alert('Usuário ou senha incorretos')</script>";  
+    } else {
+      session_start();
+      $_SESSION['user'] = 'Logado';
+      header('location: index.php');
+    }
+    
+  }  
+
+?>
     <meta charset="UTF-8">
-   
+   <style>
+    *{
+      color: #e6e6e6
+    }
+   </style>
 	 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -33,18 +62,18 @@
         </div>
       </div>
       <div class="holder">
-        <form>
-            <div class="form-group">
-              <label >Email </label>
-              <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Digite seu Email">
-              <small id="emailHelp" class="form-text text-muted">Seu Email não será compartilhado com ninguem.</small>
-            </div>
-            <div class="form-group">
-              <label >Senha</label>
-              <input type="password" class="form-control" placeholder="Digite sua senha">
-            </div>
-            <a href="index.php">Entrar</a>
-          </form>
+        <form method="POST" action="login-funcionario.php?attempt">
+          <div class="form-group">
+            <label >Email </label>
+            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Digite seu Email">
+            <small id="emailHelp" class="form-text text-muted">Seu Email não será compartilhado com ninguem.</small>
+          </div>
+          <div class="form-group">
+            <label >Senha</label>
+            <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha">
+          </div>
+          <button type="submit" class="btn btn-primary" name="entrar" id="entrar">Entrar</button>
+        </form>
       </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
