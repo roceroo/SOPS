@@ -1,6 +1,15 @@
 <!doctype html>
 <head>
-    <meta charset="UTF-8">
+    <style>
+      #app{
+        color: #e6e6e6;
+      }
+      .content{
+        padding: 40px;
+        width: 600px;
+        margin: 0 auto;
+      }
+    </style>
     
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <!-- Required meta tags -->
@@ -29,18 +38,24 @@
               O que deseja fazer?
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a v-on:click="page = 0" class="dropdown-item" href="cad-funcionario.php">Cadastro de funcionário</a>
-              <a class="dropdown-item" href="cad-compra.php">Cadastro de compra</a>
-              <a class="dropdown-item" href="cad-venda.php">Cadastro de venda</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="cad-funcionario.php">Cadastro de Funcionário</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="listar-funcionario.php">Listar Funcionário</a>
+              <a class="dropdown-item" href="cad-compra.php">Cadastro de Compra</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="listar-compra.php">Listar Compra</a>
+              <a class="dropdown-item" href="cad-venda.php">Cadastro de Venda</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="listar-venda.php">Listar Venda</a>
               <a class="dropdown-item" href="cad-cliente.php">Cadastro de Cliente</a>
-              <a href="#" class="dropdown-item">Cadastro de veículo</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="listar-cliente.php">Listar Cliente</a>
+              <a class="dropdown-item" href="cad-veiculo.php">Cadastro de Veículo</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="listar-veiculo.php">Listar Veículo</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="index2.php">Voltar para a página inicial</a> 
               <a v-on:click="page = 0" class="dropdown-item"  href="index2.html">Voltar para a página inicial</a> 
             </div>
           </div>
         </div>
     </div>
 	<h1>Cadastrar Compra</h1>
-	<form action="?page=salvar-compra" method="POST">
+	<form action="salvar-compra.php" method="POST">
 		<input type="hidden" name="acao" value="cadastrar">
 		<div class="form-group">
 			<label>Nome do Produto</label>

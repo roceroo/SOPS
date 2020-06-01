@@ -1,7 +1,24 @@
 <!doctype html>
+
+<?php
+
+	switch(@$_REQUEST['page']){
+		case 'editar-funcionario':
+			include('editar-funcionario.php');
+		break;
+		case 'salvar-funcionario':	
+			include('salvar-funcionario.php');
+		break;
+	}
+
+?>
 <head>
     <meta charset="UTF-8">
-    
+    <style>
+			*{
+				color: #e6e6e6
+			}
+		</style>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -15,8 +32,36 @@
 </head>
 
 <body>
+<div id="app">
+      <div class="bg-config"></div>
+      <div style="text-align: center;" class="menu">
+        <div class="container">
+          <div id="logo" class="grid-6">
+            <img src="img/sops.png" alt="SOPS">
+          </div>
+          <div class="dropdown grid-6">
+            <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              O que deseja fazer?
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a v-on:click="page = 0" class="dropdown-item" href="cad-funcionario.php">Cadastro de Funcionário</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="listar-funcionario.php">Listar Funcionário</a>
+              <a class="dropdown-item" href="cad-compra.php">Cadastro de Compra</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="listar-compra.php">Listar Compra</a>
+              <a class="dropdown-item" href="cad-venda.php">Cadastro de Venda</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="listar-venda.php">Listar Venda</a>
+              <a class="dropdown-item" href="cad-cliente.php">Cadastro de Cliente</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="listar-cliente.php">Listar Cliente</a>
+              <a class="dropdown-item" href="cad-veiculo.php">Cadastro de Veículo</a>
+              <a v-on:click="page = 0" class="dropdown-item" href="listar-veiculo.php">Listar Veículo</a>
+              <a v-on:click="page = 0" class="dropdown-item"  href="index2.html">Voltar para a página inicial</a> 
+            </div>
+          </div>
+        </div>
+      </div>
 	<h1>Listar Funcionário</h1>
 	<?php
+	include('config.php');
 		$sql = "SELECT * FROM funcionario";
 		
 		$res = $conn->query($sql) or die($conn->error);
@@ -26,13 +71,14 @@
 		print "<p>Encontrou <b>".$qtd."</b> resultado(s)</p>";
 		
 		if($qtd > 0){
-			print "<table class='table table-striped table-hover'>";
+			print "<table class='table table-hover' style='background: #1a1a1a; font-weight: 100; width: 80%; margin: 10vh auto'>";
 			print "<tr>";
 			print "<th>Nome do Funcionário</th>";
 			print "<th>Email</th>";
 			print "<th>Endereço do Funcionário</th>";
 			print "<th>CPF do Funcionário</th>";
 			print "<th>Data de Nascimento do Funcionário</th>";
+			print "<th>Salário</th>";
 			print "<th>Ações</th>";
 			print "</tr>";
 			while($row = $res->fetch_object()){
@@ -42,10 +88,9 @@
 				print "<td>".$row->endereco."</td>";
 				print "<td>".$row->cpf."</td>";
 				print "<td>".$row->data_nasc."</td>";
-				print "<td>".$row->salario."</td>";
+				print "<td>R$".$row->salario."</td>";
 				print "<td>
 						<button class='btn btn-success' onclick=\"location.href='?page=editar-funcionario&id_funcionario=".$row->id_funcionario."';\">Editar</button>
-						
 						<button class='btn btn-danger' onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar-funcionario&acao=excluir&id_funcionario=".$row->id_funcionario."';}else{false;}\">Excluir</button>
 					</td>";
 				print "</tr>";

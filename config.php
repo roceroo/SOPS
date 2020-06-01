@@ -1,35 +1,15 @@
 	<?php
-		define('HOST','localhost');
-		define('USER','root');
-		define('PASS','Bancoprojeto123');
-		define('BASE','sops');
-		
-		$email = $_POST['email'];
-		$senha = $_POST['senha'];
-		//$conexao = mysqli_connect($servidor,$usuario,$senha, $banco);
+		// define('HOST','localhost');
+		// define('USER','eu');
+		// define('PASS','1234');
+		// define('BASE','sopsv2');
 
-		$conn = new mysqli(HOST,USER,PASS,BASE);
-		$conn = mysqli_connect("localhost", "root", "Bancoprojeto123", "sops") or die
+		// $conn = new mysqli(HOST,USER,PASS,BASE);
+		$conn = mysqli_connect("localhost", "eu", "1234", "sopsv2") or die
 		("Sem conexão com o servidor");
-		$select = mysqli_select_db("Bancoprojeto123", "sops") or die ("Sem acesso ao DB, Entre em 
-		contato com o Administrador, lucasbraga8590@gmail.com");
 
-		
 		if( mysqli_connect_error() ){
 			print_r("Conexão falhou: ",mysqli_connect_error());
 			exit();
 		}
-		$result = mysqli_query("SELECT * FROM 'funcionario' WHERE 'email' = '$email' AND 'senha'= '$senha'");
-			if(mysqli_num_rows ($result) > 0 )
-			{
-			$_SESSION['login'] = $login;
-			$_SESSION['senha'] = $senha;
-			header('location:index.php');
-			}
-			else{
-			unset ($_SESSION['login']);
-			unset ($_SESSION['senha']);
-			header('location:index.html');
-			
-			}
 	?>

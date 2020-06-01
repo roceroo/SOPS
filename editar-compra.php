@@ -1,7 +1,14 @@
 <h1>Editar Compra</h1>
 <?php
+	switch(@$_REQUEST['page']){
+		case 'salvar-compra':
+			include('salvar-compra.php');
+		break;
+	}
+
+include('config.php');
 	$sql = "SELECT * FROM compra 
-			WHERE id_compra=".$_REQUEST["id_compra"];
+			WHERE id_compra=".$_GET["id_compra"];
 			
 			
 	$res = $conn->query($sql) or die($conn->error);

@@ -32,18 +32,18 @@
           </div>
         </div>
       </div>
-      <div class="holder" style='display: flex; margin: 30vh auto; padding-left: 40vw; color: #e6e6e6; background: #1a1a1a; padding-bottom: 16px; padding-top: 16px'>
-        <form method="POST" action="config.php">
+      <div class="holder">
+        <form>
             <div class="form-group">
               <label >Email </label>
-              <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Digite seu Email">
+              <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Digite seu Email">
               <small id="emailHelp" class="form-text text-muted">Seu Email não será compartilhado com ninguem.</small>
             </div>
             <div class="form-group">
               <label >Senha</label>
-              <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha">
+              <input type="password" class="form-control" placeholder="Digite sua senha">
             </div>
-            <button type="submit" class="btn btn-primary" name="entrar" id="entrar" href="index2.php">Entrar</button>
+            <a href="index.php">Entrar</a>
           </form>
       </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

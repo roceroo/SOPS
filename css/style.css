@@ -186,3 +186,13 @@ body{
 .obj{
   margin-top: -30px;
 }
+
+.holder{
+  display: flex; 
+  margin: 30vh auto; 
+  padding-left: 40vw; 
+  color: #e6e6e6; 
+  background: #1a1a1a; 
+  padding-bottom: 16px; 
+  padding-top: 16px
+}

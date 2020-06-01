@@ -1,7 +1,14 @@
 <h1>Editar Cliente</h1>
 <?php
+	switch(@$_REQUEST['page']){
+		case 'salvar-cliente':
+			include('salvar-cliente.php');
+		break;
+	}
+
+include('config.php');
 	$sql = "SELECT * FROM cliente 
-			WHERE id_cliente=".$_REQUEST["id_cliente"];
+			WHERE id_cliente=".$_GET["id_cliente"];
 			
 			
 	$res = $conn->query($sql) or die($conn->error);

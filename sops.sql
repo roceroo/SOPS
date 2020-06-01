@@ -15,12 +15,12 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- Schema sops
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `sops` DEFAULT CHARACTER SET utf8 ;
-USE 'sops' ;
+USE `sops` ;
 
 -- -----------------------------------------------------
 -- Table `sops`.`funcionario`
 -- -----------------------------------------------------
-CREATE TABLE sops.funcionario (
+CREATE TABLE IF NOT EXISTS `sops`.`funcionario` (
   `id_funcionario` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
@@ -32,20 +32,6 @@ CREATE TABLE sops.funcionario (
   `senha` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_funcionario`))
 ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `sops`.`compra`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sops`.`compra` (
-  `id_compra` INT NOT NULL AUTO_INCREMENT,
-  `nome_produto_compra` VARCHAR(45) NOT NULL,
-  `data_compra` DATE NOT NULL,
-  `custo_compra` VARCHAR(45) NOT NULL,
-  `fornecedor` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_compra`))
-ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `sops`.`equipamento`
@@ -67,9 +53,9 @@ CREATE TABLE IF NOT EXISTS `sops`.`servicos` (
   `id_compra` INT NOT NULL,
   `id_equipamento` INT NOT NULL,
   PRIMARY KEY (`id_servicos`),
-  INDEX `fk_servicos_funcionario_idx` (`id_funcionario` ASC) VISIBLE,
-  INDEX `fk_servicos_compra1_idx` (`id_compra` ASC) VISIBLE,
-  INDEX `fk_servicos_table11_idx` (`id_equipamento` ASC) VISIBLE,
+  INDEX `fk_servicos_funcionario_idx` (`id_funcionario` ASC),
+  INDEX `fk_servicos_compra1_idx` (`id_compra` ASC),
+  INDEX `fk_servicos_table11_idx` (`id_equipamento` ASC),
   CONSTRAINT `fk_servicos_funcionario`
     FOREIGN KEY (`id_funcionario`)
     REFERENCES `sops`.`funcionario` (`id_funcionario`)
@@ -112,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `sops`.`cliente` (
   `data_nasc` DATE NOT NULL,
   `id_veiculo` INT NOT NULL,
   PRIMARY KEY (`id_cliente`),
-  INDEX `fk_cliente_veiculo1_idx` (`id_veiculo` ASC) VISIBLE,
+  INDEX `fk_cliente_veiculo1_idx` (`id_veiculo` ASC),
   CONSTRAINT `fk_cliente_veiculo1`
     FOREIGN KEY (`id_veiculo`)
     REFERENCES `sops`.`veiculo` (`id_veiculo`)
@@ -142,9 +128,9 @@ CREATE TABLE IF NOT EXISTS `sops`.`registro de atendimento` (
   `id_cliente` INT NOT NULL,
   `id_venda` INT NOT NULL,
   PRIMARY KEY (`id_registro`),
-  INDEX `fk_Registro de atendimento_servicos1_idx` (`id_servicos` ASC) VISIBLE,
-  INDEX `fk_Registro de atendimento_cliente1_idx` (`id_cliente` ASC) VISIBLE,
-  INDEX `fk_registro de atendimento_venda1_idx` (`id_venda` ASC) VISIBLE,
+  INDEX `fk_Registro de atendimento_servicos1_idx` (`id_servicos` ASC),
+  INDEX `fk_Registro de atendimento_cliente1_idx` (`id_cliente` ASC),
+  INDEX `fk_registro de atendimento_venda1_idx` (`id_venda` ASC),
   CONSTRAINT `fk_Registro de atendimento_servicos1`
     FOREIGN KEY (`id_servicos`)
     REFERENCES `sops`.`servicos` (`id_servicos`)
@@ -166,3 +152,5 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+

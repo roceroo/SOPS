@@ -1,7 +1,14 @@
 <h1>Editar Venda</h1>
 <?php
+	switch(@$_REQUEST['page']){
+		case 'salvar-venda':
+			include('salvar-venda.php');
+		break;
+	}
+
+include('config.php');
 	$sql = "SELECT * FROM venda 
-			WHERE id_venda=".$_REQUEST["id_venda"];
+			WHERE id_venda=".$_GET["id_venda"];
 			
 			
 	$res = $conn->query($sql) or die($conn->error);
@@ -23,11 +30,11 @@
 	</div>
 	<div class="form-group">
 		<label>Nome do Servico</label>
-		<input type="text" name="nome_servico" class="form-control">
+		<input type="text" name="nome_servico" value='<?php print $row->nome_servico?>' class="form-control">
     </div>
     <div class="form-group">
 		<label>Valor do Servico</label>
-		<input type="number" name="valor_servico" class="form-control">
+		<input type="number" name="valor" value='<?php print $row->valor?>' class="form-control">
     </div>
     <div class="form-group">
 		<button type="submit" class="btn btn-success">Salvar</button>
